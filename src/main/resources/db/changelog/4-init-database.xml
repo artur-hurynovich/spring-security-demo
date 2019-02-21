@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="artur_hurynovich" id="1.1">
+        <insert catalogName="security_db" tableName="users">
+            <column name="name" value="Admin"/>
+            <column name="email" value="admin@gmail.com"/>
+            <column name="password" value="$2a$10$Yf4.KWUjhvb/8R5hxllTo.QPe/N.JaKN3rEuB3u1eVyyOl3/FtoYm"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="artur_hurynovich" id="1.2">
+        <insert catalogName="security_db" tableName="roles">
+            <column name="name" value="ADMIN"/>
+        </insert>
+        <insert catalogName="security_db" tableName="roles">
+            <column name="name" value="USER"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="artur_hurynovich" id="1.3">
+        <insert catalogName="security_db" tableName="user_role">
+            <column name="user_id" value="1"/>
+            <column name="role_id" value="1"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

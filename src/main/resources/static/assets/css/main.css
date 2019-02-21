@@ -1,0 +1,8 @@
+.ul-menu {
+    width: auto;
+    list-style-type: none;
+}
+
+.li-menu-item {
+    display: inline-block;
+}

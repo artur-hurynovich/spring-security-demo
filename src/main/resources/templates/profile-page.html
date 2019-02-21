@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Profile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/assets/css/main.css}">
+</head>
+<body>
+    <div th:insert="~{menu :: menu-bar}"></div>
+    <div>
+        <table>
+            <tr>
+                <td><label>Name:</label></td>
+                <td><label th:text="${user.name}"></label></td>
+            </tr>
+            <tr>
+                <td><label>E-mail:</label></td>
+                <td><label th:text="${user.email}"></label></td>
+            </tr>
+            <tr>
+                <td><label>Roles:</label></td>
+                <td>
+                    <th:block th:each="role : ${user.roles}">
+                        <label th:text="${role.name}"></label>
+                    </th:block>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <form th:action="@{/sign-out}">
+                        <button type="submit">Sign Out</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="artur_hurynovich" id="1.1">
+        <createTable tableName="roles">
+            <column name="id" type="TINYINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(50)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="artur_hurynovich" id="1.2">
+        <addPrimaryKey columnNames="id" constraintName="ROLE_ID_PK" tableName="roles"/>
+    </changeSet>
+    <changeSet author="artur_hurynovich" id="1.3">
+        <addAutoIncrement columnDataType="TINYINT"
+                          columnName="id"
+                          incrementBy="1"
+                          startWith="1"
+                          tableName="roles"/>
+    </changeSet>
+
+</databaseChangeLog>
